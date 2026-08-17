@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FLEX LINE - REPORT - LIUGONG</title>
     <!-- Chart.js & DataLabels Plugin for Analytics -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js">
+window.addEventListener('unhandledrejection', function (event) {
+    console.error('Unhandled promise rejection:', event.reason);
+});
+</script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
     <style>
         :root {
@@ -6345,7 +6349,7 @@ function renderPremiumPlantDashboard(){
         // receives the POST and updates the Sheet.
         return fetch(GOOGLE_SHEETS_API_URL, {
             method: 'POST',
-            mode: 'no-cors',
+            
             body: body,
             keepalive: true
         }).then(function() {
