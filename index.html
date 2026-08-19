@@ -5286,7 +5286,7 @@
 
                 records[targetIndex] = record;
             } else {
-                records.unshift({
+            records.push({
                     id: 'REC-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8),
                     model: modelValue,
                     component: componentValue,
